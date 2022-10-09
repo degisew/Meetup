@@ -33,12 +33,20 @@ function Home() {
       description: "",
     },
   ];
+  const style = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "70px",
+    backgroundColor: 'black',
+    color: 'white',
+  }
   return (
     <div>
       <MeetupItem data={Dummy_Data}/>
       <footer>
-        <div className="footer">
-            &copy&nbsp;2022, Degisew Mengist. All rights are Reserved.
+        <div style={style}>
+            &copy;&nbsp;2022 Degisew Mengist. All rights are Reserved.
         </div>
       </footer>
     </div>
