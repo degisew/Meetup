@@ -12,6 +12,11 @@ function NavBar() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/Add" className={classes.navlink}>
+              Add New Meetup
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/Favorites" className={classes.navlink}>
               Favorites
             </NavLink>

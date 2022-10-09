@@ -20,10 +20,10 @@
 }
 
 .navlink {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.724);
   text-decoration-line: none;
 }
 
 .navlink:hover {
-  color: rgb(49, 239, 42);
+  color: #fff;
 }
