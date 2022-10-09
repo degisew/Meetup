@@ -1,0 +1,17 @@
+.mainContainer {
+   text-align: center;
+   margin-bottom: 20px;
+}
+.image {
+    display: flex;
+    width: 100%;
+    max-height: 450px;
+
+}
+.title {
+    font-size: large;
+}
+
+.footer {
+    color: white;
+}
