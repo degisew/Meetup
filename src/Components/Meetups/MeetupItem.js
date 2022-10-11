@@ -4,9 +4,10 @@ import Card from '../UI/Card';
 function MeetupItem(props) {
   return (
     <Card>
-      {props.data.map(meetup => {
+      
+       {props.data.map(meetup => {
         return (
-          <div className={classes.mainContainer}>
+          <div className={classes.mainContainer} key={meetup.id}>
             <div>
               <img
                 src={meetup.image}
@@ -29,7 +30,8 @@ function MeetupItem(props) {
             </button>
           </div>
         );
-      })}
+      })} 
+
     </Card>
   );
 }

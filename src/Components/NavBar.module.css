@@ -1,21 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
+@import url(https://fonts.googleapis.com/css?family=Lobster:regular);
 .header {
   display: flex;
   background-color: #800040;
+  width: 100%;
   min-height: 80px;
+  overflow: hidden;
+  padding: 0 10px;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
+position: fixed;
+  top: 0;
+}
+
+
+
+.logo {
+  font-family: "Lobster", sans-serif;
+  color: #fff;
+  font-size: 70px;
 }
 
 .ul {
   display: flex;
   column-gap: 20px;
   list-style-type: none;
-  padding-right: 10px;
   font-size: 30px;
 }
 
