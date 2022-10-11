@@ -1,5 +1,5 @@
 import React from "react";
-import MeetupItem from "../Components/MeetupItem";
+import MeetupItem from "../Components/Meetups/MeetupItem";
 import Layout from "../Components/Layout/Layout";
 function Home() {
   const Dummy_Data = [

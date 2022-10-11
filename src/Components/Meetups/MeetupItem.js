@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './MeetupItem.module.css';
-import Card from './UI/Card';
+import Card from '../UI/Card';
 function MeetupItem(props) {
   return (
     <Card>
