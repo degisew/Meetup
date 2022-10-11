@@ -1,5 +1,6 @@
 import React from "react";
 import MeetupItem from "../Components/MeetupItem";
+import Layout from "../Components/Layout/Layout";
 function Home() {
   const Dummy_Data = [
     {
@@ -42,14 +43,15 @@ function Home() {
     color: 'white',
   }
   return (
-    <div>
+    <Layout>
+      <h1>All Meetups</h1>
       <MeetupItem data={Dummy_Data}/>
       <footer>
         <div style={style}>
             &copy;&nbsp;2022 Degisew Mengist. All rights are Reserved.
         </div>
       </footer>
-    </div>
+    </Layout>
   );
 }
 

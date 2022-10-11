@@ -1,8 +1,9 @@
 import React from 'react'
 import classes from './MeetupItem.module.css';
+import Card from './UI/Card';
 function MeetupItem(props) {
   return (
-    <section>
+    <Card>
       {props.data.map(meetup => {
         return (
           <div className={classes.mainContainer}>
@@ -29,7 +30,7 @@ function MeetupItem(props) {
           </div>
         );
       })}
-    </section>
+    </Card>
   );
 }
 
