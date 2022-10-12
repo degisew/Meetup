@@ -1,28 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./AddNewMeetupForm.module.css";
 import Card from "../UI/Card";
-const AddNewMeetupForm = () => {
-  const [value, setNewValue] = useState({
-    title: "",
-    image: "",
-    address: "",
-    description: "",
-  });
-  const onChangeHandler = (e) => {
-    setNewValue({
-        ...value, // or here we can spread the prevState if we have it.
-      [e.target.name]: e.target.value,
-    });
-  };
+const AddNewMeetupForm = (props) => {
   const onSubmitHandler = (e) => {
-    e.preventDefault();
-    console.log(value);
-    setNewValue({
-      title: "",
-      image: "",
-      address: "",
-      description: "",
-    });
+    props.onSubmitHandler(e);
+  };
+  const onChangeHandler = (e) => {
+    props.onChangeHandler(e);
   };
   return (
     <Card>
@@ -32,7 +16,7 @@ const AddNewMeetupForm = () => {
           <label htmlFor="title">Meetup Title</label>
           <input
             type="text"
-            value={value.title}
+            value={props.value.title}
             required
             id="title"
             name="title"
@@ -43,7 +27,7 @@ const AddNewMeetupForm = () => {
           <label htmlFor="image">Meetup Image</label>
           <input
             type="url"
-            value={value.image}
+            value={props.value.image}
             required
             id="image"
             name="image"
@@ -54,7 +38,7 @@ const AddNewMeetupForm = () => {
           <label htmlFor="address">Meetup Address</label>
           <input
             type="text"
-            value={value.address}
+            value={props.value.address}
             required
             id="address"
             name="address"
@@ -65,7 +49,7 @@ const AddNewMeetupForm = () => {
           <label htmlFor="description">Meetup Description</label>
           <textarea
             type="text"
-            value={value.description}
+            value={props.value.description}
             required
             id="description"
             rows="5"
