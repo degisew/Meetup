@@ -11,6 +11,10 @@
   font-size: large;
 }
 
+.description {
+  font-family: 'Roboto';
+  font-size: 30px;
+}
 .footer {
   color: white;
 }

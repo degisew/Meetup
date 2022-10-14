@@ -8,3 +8,8 @@ body {
   padding-top: 60px;
 }
 
+.loading {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 30px;
+}
