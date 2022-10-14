@@ -1,12 +1,17 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import Favorites from "./Pages/Favorites";
 import About from "./Pages/About";
 import AddMeetup from "./Pages/AddMeetup";
 import AllMeetups from "./Components/Meetups/AllMeetups";
 function App() {
-  const Meetups_Data = [];
+  const [Meetups_Data, setMeetups_Data] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const url = "https://meetup-a1681-default-rtdb.firebaseio.com/meetups.json";
+
+  const navigate = useNavigate();
+
   const [value, setNewValue] = useState({
     title: "",
     image: "",
@@ -21,14 +26,44 @@ function App() {
   };
   const onSubmitHandler = (e) => {
     e.preventDefault();
-     const url = "https://meetup-a1681-default-rtdb.firebaseio.com/meetups.json";
-     fetch(url, {
-       method: "POST",
-       body: JSON.stringify(value),
-       'Content-Type': 'application/json'
-     });
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(value),
+      "Content-Type": "application/json",
+    }).then(() => {
+      navigate("/");
+    });
   };
 
+  useEffect(() => {
+    fetch(url, {
+      "Content-Type": "application/json",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // Now we should transform the data from firebase into array. b/c
+        // the firebase returns object not array but we need array.
+        for (const key in data) {
+          const returnedMeetup = {
+            id: key,
+            ...data[key],
+          };
+          Meetups_Data.push(returnedMeetup);
+        }
+        setIsLoading(false);
+        setMeetups_Data((prevState) => {
+          if (prevState) {
+            prevState = Meetups_Data;
+
+            return prevState;
+          }
+        });
+      });
+  }, [Meetups_Data]);
+  if (isLoading) {
+    return <p className="loading">Loading...</p>;
+  }
   return (
     <>
       <NavBar />
