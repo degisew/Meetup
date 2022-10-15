@@ -2,6 +2,9 @@ import React from "react";
 import MeetupItem from "../Components/Meetups/MeetupItem";
 import Layout from "../Components/Layout/Layout";
 function Home(props) {
+ const favoritesHandler = (favoriteItem) => {
+  props.favoritesHandler(favoriteItem);
+ };
   const style = {
     display: "flex",
     justifyContent: "center",
@@ -13,7 +16,10 @@ function Home(props) {
   return (
     <Layout>
       <h1>All Meetups</h1>
-      <MeetupItem data={props.meetups} />
+      <MeetupItem
+        data={props.meetups}
+        favoritesHandler={favoritesHandler}
+      />
       <footer>
         <div style={style}>
           &copy;&nbsp;2022 Degisew Mengist. All rights are Reserved.

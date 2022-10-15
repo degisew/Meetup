@@ -11,7 +11,7 @@ function App() {
   const url = "https://meetup-a1681-default-rtdb.firebaseio.com/meetups.json";
 
   const navigate = useNavigate();
-
+  const [userFavorites, setUserFavorites] = useState([]);
   const [value, setNewValue] = useState({
     title: "",
     image: "",
@@ -24,6 +24,26 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
+   const favoritesHandler = (favoriteItem) => {
+     const newState =   {
+          title: favoriteItem.title,
+          image: favoriteItem.image,
+          address: favoriteItem.address,
+          description: favoriteItem.description
+        };
+        userFavorites.push(newState);
+     setUserFavorites((prevState) => {
+      if(prevState) {
+      prevState = userFavorites; 
+
+      return prevState;
+           
+      
+      }
+    }
+
+    );
+      }
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -68,7 +88,15 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<AllMeetups Dummy_Data={Meetups_Data} />} />
+        <Route
+          path="/"
+          element={
+            <AllMeetups
+              Dummy_Data={Meetups_Data}
+              favoritesHandler={favoritesHandler}
+            />
+          }
+        />
         <Route
           path="/Add"
           element={
@@ -79,7 +107,7 @@ function App() {
             />
           }
         />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/favorites" element={<Favorites userFavorites={userFavorites}/>} />
         <Route path="/about" element={<About />} />
       </Routes>
     </>
