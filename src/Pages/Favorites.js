@@ -3,7 +3,7 @@ import classes from "./Favorites.module.css";
 import Layout from '../Components/Layout/Layout';
 function Favorites(props) {
   
-      if(props.userFavorites.length == 0 ) {
+      if(props.userFavorites.length === 0 ) {
 
         return (
           <p className={classes.noFavorite}>
@@ -20,7 +20,7 @@ function Favorites(props) {
           <img
             src={favorites.image}
             className={classes.image}
-            alt="meetup image"
+            alt="meetup-image"
           />
         </div>
         <div className={classes.title}>
