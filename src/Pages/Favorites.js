@@ -20,7 +20,6 @@ function Favorites(props) {
           <img
             src={favorites.image}
             className={classes.image}
-            alt="meetup-image"
           />
         </div>
         <div className={classes.title}>
