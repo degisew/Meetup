@@ -1,0 +1,27 @@
+.mainContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.image {
+  display: flex;
+  width: 100%;
+  max-height: 450px;
+}
+.title {
+  font-size: large;
+}
+
+.description {
+  font-family: 'Roboto';
+  font-size: 30px;
+}
+.footer {
+  color: white;
+}
+
+.favBtn {
+  font-size: 20px;
+  background-color: inherit;
+  padding: 10px;
+  border-radius: 10px;
+}
