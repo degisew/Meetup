@@ -22,11 +22,11 @@ function NavBar() {
                 Favorites
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="About" className={classes.navlink}>
                 About
               </NavLink>
-            </li>
+            </li> */}
           </ul>
       </header>
     </div>

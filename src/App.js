@@ -108,7 +108,7 @@ function App() {
           }
         />
         <Route path="/favorites" element={<Favorites userFavorites={userFavorites}/>} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
       </Routes>
     </>
   );
