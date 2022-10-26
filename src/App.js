@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import Favorites from "./Pages/Favorites";
-import About from "./Pages/About";
 import AddMeetup from "./Pages/AddMeetup";
 import AllMeetups from "./Components/Meetups/AllMeetups";
 function App() {
@@ -16,6 +15,7 @@ function App() {
     title: "",
     image: "",
     address: "",
+    dateTime: "",
     description: "",
   });
   const onChangeHandler = (e) => {
@@ -24,26 +24,28 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
-   const favoritesHandler = (favoriteItem) => {
-     const newState =   {
-          title: favoriteItem.title,
-          image: favoriteItem.image,
-          address: favoriteItem.address,
-          description: favoriteItem.description
-        };
-        userFavorites.push(newState);
-     setUserFavorites((prevState) => {
-      if(prevState) {
-      prevState = userFavorites; 
+  const favoritesHandler = (favoriteItem) => {
+    const newState = {
+      title: favoriteItem.title,
+      image: favoriteItem.image,
+      address: favoriteItem.address,
+      dateTime: favoriteItem.dateTime,
+      description: favoriteItem.description,
+    };
+    userFavorites.push(newState);
+    setUserFavorites((prevState) => {
+      if (prevState) {
+        prevState = userFavorites;
 
-      return prevState;
-           
-      
+        return prevState;
       }
-    }
+    });
+  };
 
-    );
-      }
+  ////////////////////////////////////////////////////
+  const removeFavoritesHandler = (item) => {
+    userFavorites.filter((element) => element.title !== item);
+  };
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -107,7 +109,15 @@ function App() {
             />
           }
         />
-        <Route path="/favorites" element={<Favorites userFavorites={userFavorites}/>} />
+        <Route
+          path="/favorites"
+          element={
+            <Favorites
+              userFavorites={userFavorites}
+              removeFavoritesHandler={removeFavoritesHandler}
+            />
+          }
+        />
         {/* <Route path="/about" element={<About />} /> */}
       </Routes>
     </>

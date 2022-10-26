@@ -46,6 +46,17 @@ const AddNewMeetupForm = (props) => {
           />
         </div>
         <div className={classes.control}>
+          <label htmlFor="address">Meetup Date & Time</label>
+          <input
+            type="text"
+            value={props.value.dateTime}
+            required
+            id="dateTime"
+            name="dateTime"
+            onChange={onChangeHandler}
+          />
+        </div>
+        <div className={classes.control}>
           <label htmlFor="description">Meetup Description</label>
           <textarea
             type="text"

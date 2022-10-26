@@ -25,7 +25,7 @@ function MeetupItem(props) {
             </div>
             <div className={classes.address}>
               <p>
-                {meetup.dateTime}, <b>{meetup.timeZone}</b>
+                {meetup.dateTime}
               </p>
               <address>{meetup.address}</address>
             </div>
