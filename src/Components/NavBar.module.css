@@ -1,30 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster:regular);
+
 .header {
   display: flex;
   background-color: #800040;
-  /* min-height: 80px; */
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
   position: fixed;
-  top: 0; 
+  top: 0;
   right: 0;
-  left: 0;  
+  left: 0;
 }
 
 .logo {
-width: 3rem;
-height: 3rem;
-margin: 10px 0;
+  width: 3rem;
+  height: 3rem;
+  margin: 10px 0;
 }
 
-.menuDiv button{
-background-color: inherit;
-border: none;
+.menuDiv button {
+  background-color: inherit;
+  border: none;
 }
 
 .menuIcon {
-fill: #800040;
+  fill: #800040;
   width: 40px;
   height: 30px;
 }
@@ -32,22 +32,23 @@ fill: #800040;
 .mobileMenuArea {
   background-color: rgb(227, 223, 223);
   display: block;
-      width: 50%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 1;
-      padding: 10px;
-  
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 10px;
+
 }
 
 .mobileUl li {
   margin-top: 2rem;
-list-style-type: none;
-font-size: 25px;
+  list-style-type: none;
+  font-size: 25px;
 
 }
+
 .mobileMenuArea button {
   display: flex;
   align-self: flex-start;
@@ -57,7 +58,7 @@ font-size: 25px;
 }
 
 .mobilNavlink {
-color: black;
+  color: black;
   text-decoration-line: none;
 }
 
@@ -76,20 +77,23 @@ color: black;
 
 @media(min-width: 768px) {
   .ul {
-      display: flex;
-      column-gap: 20px;
-      list-style-type: none;
-      font-size: 20px;
-    }
-        .logo {
-          width: 5rem;
-          height: 5rem;
-          margin: 10px 0;
-        }
+    display: flex;
+    column-gap: 20px;
+    list-style-type: none;
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 5rem;
+    height: 5rem;
+    margin: 10px 0;
+  }
+
   .menuDiv {
     display: none;
   }
-    .mobileMenuArea {
-      display: none;
-    }
+
+  .mobileMenuArea {
+    display: none;
+  }
 }

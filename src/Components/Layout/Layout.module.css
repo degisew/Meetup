@@ -1,7 +1,7 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 40rem;
-    margin: 6rem  auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 40rem;
+  margin: 6rem auto 0 auto;
 }
