@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import NavBar from "./Components/NavBar";
-import Favorites from "./Pages/Favorites";
-import AddMeetup from "./Pages/AddMeetup";
-import AllMeetups from "./Components/Meetups/AllMeetups";
+/* eslint-disable */
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import NavBar from './Components/NavBar';
+import Favorites from './Pages/Favorites';
+import AddMeetup from './Pages/AddMeetup';
+import AllMeetups from './Components/Meetups/AllMeetups';
+
 function App() {
   const [Meetups_Data, setMeetups_Data] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const url = "https://meetup-a1681-default-rtdb.firebaseio.com/meetups.json";
+  const url = 'https://meetup-a1681-default-rtdb.firebaseio.com/meetups.json';
 
   const navigate = useNavigate();
   const [userFavorites, setUserFavorites] = useState([]);
   const [value, setNewValue] = useState({
-    title: "",
-    image: "",
-    address: "",
-    dateTime: "",
-    description: "",
+    title: '',
+    image: '',
+    address: '',
+    dateTime: '',
+    description: '',
   });
   const onChangeHandler = (e) => {
     setNewValue({
@@ -42,7 +44,7 @@ function App() {
     });
   };
 
-  ////////////////////////////////////////////////////
+  /// /////////////////////////////////////////////////
   const removeFavoritesHandler = (item) => {
     userFavorites.filter((element) => element.title !== item);
   };
@@ -50,17 +52,17 @@ function App() {
     e.preventDefault();
 
     fetch(url, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(value),
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     }).then(() => {
-      navigate("/");
+      navigate('/');
     });
   };
 
   useEffect(() => {
     fetch(url, {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     })
       .then((res) => res.json())
       .then((data) => {
@@ -92,31 +94,31 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
+          element={(
             <AllMeetups
               Dummy_Data={Meetups_Data}
               favoritesHandler={favoritesHandler}
             />
-          }
+          )}
         />
         <Route
           path="/Add"
-          element={
+          element={(
             <AddMeetup
               onChangeHandler={onChangeHandler}
               value={value}
               onSubmitHandler={onSubmitHandler}
             />
-          }
+          )}
         />
         <Route
           path="/favorites"
-          element={
+          element={(
             <Favorites
               userFavorites={userFavorites}
               removeFavoritesHandler={removeFavoritesHandler}
             />
-          }
+          )}
         />
         {/* <Route path="/about" element={<About />} /> */}
       </Routes>

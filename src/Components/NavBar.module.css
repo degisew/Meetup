@@ -39,14 +39,12 @@
   right: 0;
   z-index: 1;
   padding: 10px;
-
 }
 
 .mobileUl li {
   margin-top: 2rem;
   list-style-type: none;
   font-size: 25px;
-
 }
 
 .mobileMenuArea button {
@@ -75,7 +73,7 @@
   color: #fff;
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   .ul {
     display: flex;
     column-gap: 20px;

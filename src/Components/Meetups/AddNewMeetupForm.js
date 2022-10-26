@@ -1,6 +1,8 @@
-import React from "react";
-import classes from "./AddNewMeetupForm.module.css";
-import Card from "../UI/Card";
+/* eslint-disable */
+import React from 'react';
+import classes from './AddNewMeetupForm.module.css';
+import Card from '../UI/Card';
+
 const AddNewMeetupForm = (props) => {
   const onSubmitHandler = (e) => {
     props.onSubmitHandler(e);

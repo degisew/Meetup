@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import Layout from "../Components/Layout/Layout";
 import AddNewMeetupForm from "../Components/Meetups/AddNewMeetupForm";

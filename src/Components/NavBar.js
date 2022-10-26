@@ -1,19 +1,21 @@
-import React, {useState} from 'react'
-import { NavLink } from 'react-router-dom';
-import {AiFillCloseCircle} from 'react-icons/ai'
-import classes from './NavBar.module.css';
-import logo from '../assets/images/meetup.png';
-import menu from '../assets/images/menu.png';
+/* eslint-disable */
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { AiFillCloseCircle } from "react-icons/ai";
+import classes from "./NavBar.module.css";
+import logo from "../assets/images/meetup.png";
+import menu from "../assets/images/menu.png";
+
 function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const menuHandler = () => {
     setToggleMenu(!toggleMenu);
-  }
+  };
   const closeMenuHandler = () => {
-   setToggleMenu(false);
-  }
+    setToggleMenu(false);
+  };
   let toggleMenuItemDiv;
-  let menuItem = (
+  const menuItem = (
     <ul className={classes.mobileUl}>
       <li>
         <NavLink
@@ -49,10 +51,12 @@ function NavBar() {
              </li> */}
     </ul>
   );
-  if(toggleMenu) {
+  if (toggleMenu) {
     toggleMenuItemDiv = (
       <div className={classes.mobileMenuArea}>
-        <button onClick={closeMenuHandler}><AiFillCloseCircle/></button>
+        <button onClick={closeMenuHandler}>
+          <AiFillCloseCircle />
+        </button>
         {menuItem}
       </div>
     );
@@ -92,5 +96,5 @@ function NavBar() {
       </header>
     </section>
   );
-  }
-export default NavBar
+}
+export default NavBar;
